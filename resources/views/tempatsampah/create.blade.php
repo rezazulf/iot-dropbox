@@ -10,7 +10,7 @@
       <form action="{{ route('tempatsampah.store') }}" method="POST">
          @csrf
          <div class="form-group">
-            <label>ID Device <span class="text-danger">*</span></label>
+            <label>ID Device (UUID ONLY) <span class="text-danger">*</span></label>
             <input class="form-control" type="text" name="id_tempat_sampah" value="{{ old('id_tempat_sampah') }}" />
          </div>
          <div class="form-group">
