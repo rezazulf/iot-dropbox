@@ -6,6 +6,7 @@ use App\Models\Tempatsampah;
 use App\Models\Pengosongansampah;
 use App\Notifications\SendNotification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\DB;
@@ -44,11 +45,12 @@ class TempatsampahController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * @return \Illuminate\Support\Str;
      */
      public function store(Request $request)
     {
         $request->validate([
-            'id_tempat_sampah' => 'required',
+            // 'id_tempat_sampah' => 'required',
             'alamat' => 'required',
             'latitude' => 'required',
             'longitude' => 'required',
@@ -56,7 +58,7 @@ class TempatsampahController extends Controller
         ]);
 
         $tempatsampah = new Tempatsampah();
-        $tempatsampah->id_tempat_sampah = $request->id_tempat_sampah;
+        $tempatsampah->id_tempat_sampah = Str::uuid()->toString();
         $tempatsampah->alamat = $request->alamat;
         $tempatsampah->latitude = $request->latitude;
         $tempatsampah->longitude = $request->longitude;

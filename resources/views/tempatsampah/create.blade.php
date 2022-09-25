@@ -9,10 +9,10 @@
       @endif
       <form action="{{ route('tempatsampah.store') }}" method="POST">
          @csrf
-         <div class="form-group">
+         {{-- <div class="form-group">
             <label>ID Device (UUID ONLY) <span class="text-danger">*</span></label>
             <input class="form-control" type="text" name="id_tempat_sampah" value="{{ old('id_tempat_sampah') }}" />
-         </div>
+         </div> --}}
          <div class="form-group">
             <label>Alamat <span class="text-danger">*</span></label>
             <input class="form-control" type="text" name="alamat" value="{{ old('alamat') }}" />
