@@ -15,7 +15,7 @@ class WelcomeController extends Controller
      */
     public function index(Request $request)
     {
-          $data['title'] = '';
+          $data['title'] = 'Smart Trash';
           $data['q'] = $request->q;
           $data['rows'] = Viewtransaksi::where('status', 'Aktif')->get();
           return view('welcome', $data);

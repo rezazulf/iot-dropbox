@@ -25,7 +25,7 @@ class HomeController extends Controller
       }
  
     $data['chart_data'] = json_encode($data);
-    $data['title'] = '';
+    $data['title'] = 'Home';
     $data['q'] = $request->q;
 
 

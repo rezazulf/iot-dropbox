@@ -15,7 +15,7 @@ class PetaController extends Controller
      */
     public function index(Request $request)
     {
-         $data['title'] = '';
+         $data['title'] = 'Peta Persebaran';
           $data['q'] = $request->q;
           $data['rows'] = Viewtransaksi::where('status', 'Aktif')->get();
         return view('peta.index', $data);

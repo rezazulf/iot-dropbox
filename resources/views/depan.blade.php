@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-
+<link rel="icon" href="{{ url('/image/favicon.png') }}">
 <head>
    <!-- Required meta tags -->
    <meta charset="utf-8">
@@ -17,7 +17,7 @@
       height: 500px;
    }
    </style>
-   <title>Login</title>
+   <title>Smart Trash</title>
 </head>
 
 <body>
