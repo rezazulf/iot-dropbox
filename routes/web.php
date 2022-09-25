@@ -30,13 +30,14 @@ Route::get('logout', 'App\Http\Controllers\LoginController@logout')->name('logou
 
 
 Route::group(['middleware' => ['auth']], function () {
+    Route::resource('admin', HomeController::class);
     Route::group(['middleware' => ['cek_login:admin']], function () {
-Route::resource('user', UserController::class);
-Route::resource('tempatsampah', TempatsampahController::class);
-        Route::resource('home', HomeController::class);
-  Route::resource('map', PetaController::class);
-  Route::resource('grafik', GrafikController::class);
-  Route::get('grafik', [GrafikController::class, 'index']);
+    Route::resource('user', UserController::class);
+    Route::resource('tempatsampah', TempatsampahController::class);
+    Route::resource('home', HomeController::class);
+    Route::resource('map', PetaController::class);
+    Route::resource('grafik', GrafikController::class);
+    Route::get('grafik', [GrafikController::class, 'index']);
   });
 
     Route::group(['middleware' => ['cek_login:petugas']], function () {
