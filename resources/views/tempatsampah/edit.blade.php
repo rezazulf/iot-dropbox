@@ -12,7 +12,7 @@
          @method('PUT')
          <div class="form-group">
             <label>ID Device <span class="text-danger">*</span></label>
-            <input class="form-control" type="text" name="id_tempat_sampah" value="{{ old('idtempat_sampah', $row->id_tempat_sampah) }}" />
+            <input class="form-control" type="text" name="id_tempat_sampah" readonly="readonly" value="{{ old('idtempat_sampah', $row->id_tempat_sampah) }}" />
          </div>
          <div class="form-group">
             <label>Alamat <span class="text-danger">*</span></label>
