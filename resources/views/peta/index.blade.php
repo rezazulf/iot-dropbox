@@ -46,7 +46,7 @@ function success(position) {
       el: '#map',
       lat: lt,
       lng: lg,
-      zoom: 12
+      zoom: 14
    });
 
 
