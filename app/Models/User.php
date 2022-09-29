@@ -22,4 +22,9 @@ class User extends Model implements Authenticatable
         'level',
         'id_telegram',
     ];
+    
+    public function tempatsampah()
+    {
+        return $this->hasMany(Tempatsampah::class);
+    }
 }

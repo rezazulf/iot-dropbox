@@ -66,23 +66,24 @@ function success(position) {
             if ((value.distance > 10) && (value.distance < 90)) {
                var stat = 'Terisi';
             }
-            $('#nama_tmpt').text('Lokasi : ' + value.alamat);
+            $('#nama_tmpt').text('Lokasi : '+value.keterangan+', '+ value.alamat);
+            $('#kota').text('Kota : ' + value.kota);
+            // $('#keterangan').text('Cluster : ' + value.keterangan);
+            $('#jenis_limbah').text('Jenis Limbah : ' +value.jenis_limbah);
             $('#status').text('Status : ' + value.status);
             $('#kapasitas').text('Kapasitas : ' + stat);
             $('#level').text('Level : ' + value.distance+'%');
 
             $('#staticBackdrop').modal('show');
-            //   alert('Nama Lokasi ' + value.name + ' Kapasitas ' + status);
+
          }
       });
    });
 }
-
 function fail() {
    // Could not obtain location
 }
 </script>
-
 
 <div class="modal fade" id="staticBackdrop" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
    aria-hidden="true">
@@ -97,6 +98,15 @@ function fail() {
          <div class="modal-body">
             <p>
             <div id="nama_tmpt"></div>
+            </p>
+            <p>
+            <div id="kota"></div>
+            </p>
+            <p>
+            <div id="keterangan"></div>
+            </p>
+            <p>
+            <div id="jenis_limbah"></div>
             </p>
             <p>
             <div id="status"></div>

@@ -34,10 +34,13 @@
             <tr>
                <th onclick="sortTable(0)">No</th>
                <th onclick="sortTable(1)">Alamat</th>
-               <th onclick="sortTable(2)">Latitude</th>
-               <th onclick="sortTable(3)">Longitude</th>
-               <th onclick="sortTable(4)">Level</th>
-               <th onclick="sortTable(5)">Kapasitas</th>
+               <th onclick="sortTable(2)">Kota</th>
+               <th onclick="sortTable(3)">Cluster</th>
+               <th onclick="sortTable(4)">Latitude</th>
+               <th onclick="sortTable(5)">Longitude</th>
+               <th onclick="sortTable(6)">Jenis Limbah</th>
+               <th onclick="sortTable(7)">Level</th>
+               <th onclick="sortTable(8)">Kapasitas</th>
                <th>Status</th>
             </tr>
          </thead>
@@ -46,8 +49,11 @@
          <tr>
             <td>{{ $no++ }}</td>
             <td>{{ $row->alamat }}</td>
+            <td>{{ $row->kota }}</td>
+            <td>{{ $row->keterangan }}</td>
             <td>{{ $row->latitude }}</td>
             <td>{{ $row->longitude }}</td>
+            <td>{{ $row->jenis_limbah }}</td>
             <td>{{ $row->distance }}%</td>
             <td>
                @if($row->distance >= '0' and $row->distance <=10)

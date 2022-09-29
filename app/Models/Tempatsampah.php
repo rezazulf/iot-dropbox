@@ -13,9 +13,18 @@ class Tempatsampah extends Model
     protected $primaryKey = 'id_tempat_sampah';
 
     protected $fillable = [
+        'id_user',
         'alamat',
+        'kota',
+        'keterangan',
         'latitude',
         'longitude',
+        'foto_tempatsampah',
         'status',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
 }
