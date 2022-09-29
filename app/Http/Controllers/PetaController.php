@@ -18,7 +18,6 @@ class PetaController extends Controller
          $data['title'] = 'Peta Persebaran';
           $data['q'] = $request->q;
           $data['rows'] = Viewtransaksi::where('status', 'Aktif')->get();
-        //   $data['gambar'] = Tempatsampah::all();
         return view('peta.index', $data);
     }
 
