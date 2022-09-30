@@ -73,7 +73,20 @@ function success(position) {
             $('#status').text('Status : ' + value.status);
             $('#kapasitas').text('Kapasitas : ' + stat);
             $('#level').text('Level : ' + value.distance+'%');
+            // $('#gambar').text('<img src="' + value.foto_tempatsampah+'">');
+            const list = document.getElementById("gambar");
+               if (list.hasChildNodes()) {
+               list.removeChild(list.children[0]);
+               }
 
+            var img = document.createElement('img');
+            img.classList.add('img-fluid');
+            if(img && img.style) {
+               img.style.height = 'auto';
+               img.style.width = 'auto';
+            }
+               img.src = value.foto_tempatsampah;
+                           document.getElementById('gambar').appendChild(img);
             $('#staticBackdrop').modal('show');
 
          }
@@ -116,6 +129,9 @@ function fail() {
             </p>
             <p>
             <div id="level"></div>
+            </p>
+            <p>
+            <div id="gambar"></div>
             </p>
 
          </div>

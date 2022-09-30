@@ -74,6 +74,16 @@ function success(position) {
             $('#kapasitas').text('Kapasitas : ' + stat);
             $('#level').text('Level : ' + value.distance+'%');
 
+            const list = document.getElementById("gambar");
+               if (list.hasChildNodes()) {
+               list.removeChild(list.children[0]);
+               }
+
+            var img = document.createElement('img');
+            img.classList.add('img-thumbnail');
+               img.src = value.foto_tempatsampah;
+                           document.getElementById('gambar').appendChild(img);
+
             $('#staticBackdrop').modal('show');
             //   alert('Nama Lokasi ' + value.name + ' Kapasitas ' + status);
          }
@@ -118,6 +128,9 @@ function fail() {
             </p>
             <p>
             <div id="level"></div>
+            </p>
+            <p>
+            <div id="gambar"></div>
             </p>
 
          </div>
