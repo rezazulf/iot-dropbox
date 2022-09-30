@@ -37,7 +37,7 @@
             <label>Penanggung Jawab <span class="text-danger">*</span></label>
             <select class="form-control" type="text" name="id_user" value="{{ old('id_user') }}" />
             @foreach ($users as $item)
-            <option value="{{$item->id_user== ? 'selected' : null}}">{{$item->nama_user}}</option>
+            <option value="{{$item->id_user}}" {{old('id_user') == $item->id_user ? 'selected' : null}}>{{$item->nama_user}}</option>
             @endforeach
             </select>
          </div>
