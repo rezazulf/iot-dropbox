@@ -28,8 +28,22 @@
          <div class="form-group">
             <label>Level <span class="text-danger">*</span></label>
             <select class="form-control" name="level" />
+            <option value="" disabled selected>- Pilih -</option>
             @foreach($levels as $key => $val)
             @if($key==old('level'))
+            <option value="{{ $key }}" selected>{{ $val }}</option>
+            @else
+            <option value="{{ $key }}">{{ $val }}</option>
+            @endif
+            @endforeach
+            </select>
+         </div>
+         <div class="form-group">
+            <label>Status Pekerja <span class="text-danger">*</span></label>
+            <select class="form-control" name="status" />
+            <option value="" disabled selected>- Pilih -</option>
+            @foreach($status_pekerja as $key => $val)
+            @if($key==old('status'))
             <option value="{{ $key }}" selected>{{ $val }}</option>
             @else
             <option value="{{ $key }}">{{ $val }}</option>

@@ -30,6 +30,7 @@ class UserController extends Controller
     {
         $data['title'] = 'Tambah User';
        $data['levels'] = ['admin' => 'Admin', 'petugas' => 'Petugas'];
+       $data['status_pekerja'] = ['Aktif' => 'Aktif', 'Non-Aktif' => 'Non-Aktif'];
          return view('user.create', $data);
     }
 
@@ -47,6 +48,7 @@ class UserController extends Controller
             'password' => 'required',
             'id_telegram' => 'required',
             'level' => 'required',
+            'status' => 'required',
         ]);
 
         $user = new User();
@@ -55,6 +57,7 @@ class UserController extends Controller
         $user->password = Hash::make($request->password);
         $user->id_telegram = $request->id_telegram;
         $user->level = $request->level;
+        $user->status = $request->status;
         $user->save();
         return redirect('user')->with('success', 'Tambah Data Berhasil');
     }
@@ -81,6 +84,7 @@ class UserController extends Controller
         $data['title'] = 'Ubah User';
         $data['row'] = $user;
         $data['levels'] = ['admin' => 'Admin', 'petugas' => 'Petugas'];
+        $data['status_pekerja'] = ['Aktif' => 'Aktif', 'Non-Aktif' => 'Non-Aktif'];
         return view('user.edit', $data);
     }
     /**
@@ -97,6 +101,7 @@ class UserController extends Controller
             'email' => 'required',
             'id_telegram' => 'required',
             'level' => 'required',
+            'status' => 'required',
         ]);
 
         $user->nama_user = $request->nama_user;
@@ -105,6 +110,7 @@ class UserController extends Controller
             $user->password = Hash::make($request->password);
         $user->id_telegram = $request->id_telegram;
         $user->level = $request->level;
+        $user->status = $request->status;
         $user->save();
         return redirect('user')->with('success', 'Ubah Data Berhasil');
     }

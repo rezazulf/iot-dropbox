@@ -43,7 +43,7 @@
             </select>           
          </div>
          <div class="form-group">
-            <label for="foto_tempatsampah">Upload Foto Tempat Sampah</label>
+            <label for="foto_tempatsampah">Upload Foto Tempat Sampah (Harus Landscape)</label>
             <input type="file" class="form-control" name="foto_tempatsampah" value="{{ old('foto_tempatsampah', $row->foto_tempatsampah) }}" accept="image/*" 
             onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])"/>
          </div>

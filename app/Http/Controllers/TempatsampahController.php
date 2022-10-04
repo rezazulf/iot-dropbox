@@ -45,6 +45,7 @@ class TempatsampahController extends Controller
           $data['status'] = ['Aktif' => 'Aktif', 'Tidak-Aktif' => 'Tidak-Aktif'];
           $data['jenis_limbah'] = ['Medis' => 'Medis', 'Non-Medis' => 'Non-Medis'];
           $users= User::all();
+          $users = User::where('status', 'Aktif')->get();
          return view('tempatsampah.create', $data, compact('users'));
     }
 
@@ -113,6 +114,7 @@ class TempatsampahController extends Controller
         $data['status'] = ['Aktif' => 'Aktif', 'Tidak-Aktif' => 'Tidak-Aktif'];
         $data['jenis_limbah'] = ['Medis' => 'Medis', 'Non-Medis' => 'Non-Medis'];
         $users= User::all();
+        $users = User::where('status', 'Aktif')->get();
         return view('tempatsampah.edit', $data, compact('users'));
     }
 

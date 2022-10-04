@@ -40,6 +40,18 @@
             </select>
          </div>
          <div class="form-group">
+            <label>Status Pekerja <span class="text-danger">*</span></label>
+            <select class="form-control" name="status" />
+            @foreach($status_pekerja as $key => $val)
+            @if($key==old('status', $row->status))
+            <option value="{{ $key }}" selected>{{ $val }}</option>
+            @else
+            <option value="{{ $key }}">{{ $val }}</option>
+            @endif
+            @endforeach
+            </select>
+         </div>
+         <div class="form-group">
             <button class="btn btn-primary">Simpan</button>
             <a class="btn btn-danger" href="{{ route('user.index') }}">Kembali</a>
          </div>

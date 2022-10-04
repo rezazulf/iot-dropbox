@@ -36,13 +36,14 @@
          <div class="form-group">
             <label>Penanggung Jawab <span class="text-danger">*</span></label>
             <select class="form-control" type="text" name="id_user" value="{{ old('id_user') }}" />
+            <option value="" disabled selected>- Pilih -</option>
             @foreach ($users as $item)
             <option value="{{$item->id_user}}" {{old('id_user') == $item->id_user ? 'selected' : null}}>{{$item->nama_user}}</option>
             @endforeach
             </select>
          </div>
          <div class="form-group">
-            <label for="foto_tempatsampah">Upload Foto Tempat Sampah</label>
+            <label for="foto_tempatsampah">Upload Foto Tempat Sampah (Harus Landscape)<span class="text-danger">*</label>
             <input type="file" class="form-control" value="{{ old('foto_tempatsampah') }}" id="foto_tempatsampah" name="foto_tempatsampah" accept="image/*" 
             onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])"/>
          </div>
@@ -50,6 +51,7 @@
          <div class="form-group">
             <label>Status <span class="text-danger">*</span></label>
             <select class="form-control" name="status" />
+            <option value="" disabled selected>- Pilih-</option>
             @foreach($status as $key => $val)
             @if($key==old('status'))
             <option value="{{ $key }}" selected>{{ $val }}</option>
@@ -62,6 +64,7 @@
          <div class="form-group">
             <label>Jenis Limbah <span class="text-danger">*</span></label>
             <select class="form-control" name="jenis_limbah" />
+            <option value="" disabled selected>- Pilih -</option>
             @foreach($jenis_limbah as $key => $val)
             @if($key==old('jenis_limbah'))
             <option value="{{ $key }}" selected>{{ $val }}</option>

@@ -59,7 +59,7 @@
                <form method="POST" action="{{ route('tempatsampah.destroy', $row) }}" style="display: inline-block;">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-sm btn-danger" onclick="return confirm('Hapus Data?')">Hapus</button>
+                  {{-- <button class="btn btn-sm btn-danger" onclick="return confirm('Hapus Data?')">Hapus</button> --}}
                </form>
                @else
                <form method="POST" action="{{url('update_distance')}}" style="display: inline-block;">

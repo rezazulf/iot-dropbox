@@ -26,6 +26,7 @@
                <th onclick="sortTable(2)">Email</th>
                <th onclick="sortTable(3)">ID Telegram</th>
                <th onclick="sortTable(4)">Level</th>
+               <th onclick="sortTable(5)">Status</th>
                <th>Aksi</th>
             </tr>
          </thead>
@@ -37,12 +38,13 @@
             <td>{{ $row->email }}</td>
             <td>{{ $row->id_telegram }}</td>
             <td>{{ $row->level }}</td>
+            <td>{{ $row->status }}</td>
             <td>
                <a class="btn btn-sm btn-warning" href="{{ route('user.edit', $row) }}">Ubah</a>
                <form method="POST" action="{{ route('user.destroy', $row) }}" style="display: inline-block;">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-sm btn-danger" onclick="return confirm('Hapus Data?')">Hapus</button>
+                  {{-- <button class="btn btn-sm btn-danger" onclick="return confirm('Hapus Data?')">Hapus</button> --}}
                </form>
             </td>
          </tr>
