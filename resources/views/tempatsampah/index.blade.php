@@ -61,7 +61,7 @@
                   @method('DELETE')
                   {{-- <button class="btn btn-sm btn-danger" onclick="return confirm('Hapus Data?')">Hapus</button> --}}
                </form>
-               @else
+               @elseif ($row->user->nama_user == Auth::user()->nama_user)
                <form method="POST" action="{{url('update_distance')}}" style="display: inline-block;">
                   {{ csrf_field() }}
                   <input class="form-control" type="hidden" name="id_tempat_sampah"
