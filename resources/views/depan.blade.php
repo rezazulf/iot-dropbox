@@ -42,11 +42,11 @@
                </a>   
                   <ul class="dropdown-menu nav-fill w-100 bg-primary text-white" aria-labelledby="navbarDropdownMenuLink">
                   <li>
-                  <a class="nav-link{{  request()->routeIs('Medis') ? 'active' : '' }} bg-primary text-white" href="medis">Limbah Medis <span
+                  <a class="nav-link{{  request()->routeIs('/') ? 'active' : '' }} bg-primary text-white" href="/">Limbah Medis <span
                         class="sr-only">(current)</span></a>
                   </li>
                   <li>
-                  <a class="nav-link{{  request()->routeIs('/') ? 'active' : '' }} bg-primary text-white" href="/">Limbah Umum <span
+                  <a class="nav-link{{  request()->routeIs('non-medis') ? 'active' : '' }} bg-primary text-white" href="non-medis">Limbah Umum <span
                      class="sr-only">(current)</span></a>
                   </li>
                   </ul>

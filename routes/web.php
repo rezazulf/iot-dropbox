@@ -23,8 +23,8 @@ use App\Http\Controllers\KosongkanController;
 */
 
 
-Route::resource('/',WelcomeController::class);
-Route::resource('medis',Welcome2Controller::class);
+Route::resource('/',Welcome2Controller::class);
+Route::resource('non-medis',WelcomeController::class);
 Route::get('login', 'App\Http\Controllers\LoginController@index')->name('login');
 // Route::get('register', 'App\Http\Controllers\AuthController@register')->name('register');
 Route::post('proses_login', 'App\Http\Controllers\LoginController@proses_login')->name('proses_login');

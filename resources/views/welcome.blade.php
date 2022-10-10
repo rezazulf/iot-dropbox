@@ -14,7 +14,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
 <div class="card border-primary mb-3 mt-6">
    <div class="card-body text-primary">
-      <h5 class="card-title">Peta Penyebaran Tempat Sampah</h5>
+      <h5 class="card-title">Peta Penyebaran Tempat Sampah Umum</h5>
       <div id="map"></div>
 
 
