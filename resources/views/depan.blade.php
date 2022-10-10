@@ -29,14 +29,14 @@
 
 <body>
    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="/">Smart Trash</a>
+      <a class="navbar-brand" href="#">Smart Trash</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
+            {{-- <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Peta
                </a>   
@@ -50,7 +50,7 @@
                      class="sr-only">(current)</span></a>
                   </li>
                   </ul>
-               </li>
+               </li> --}}
             <a class="nav-link{{  request()->routeIs('Login.*') ? 'active' : '' }}" href="login">Login <span
                class="sr-only">(current)</span></a>
          </ul>

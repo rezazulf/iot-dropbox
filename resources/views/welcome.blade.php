@@ -15,6 +15,18 @@
 <div class="card border-primary mb-3 mt-6">
    <div class="card-body text-primary">
       <h5 class="card-title">Peta Penyebaran Tempat Sampah Umum</h5>
+      <div class="dropdown show">
+         <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Jenis Limbah
+         </a>
+       
+         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+           <a class="dropdown-item" href="/">Medis</a>
+           <div class="dropdown-divider"></div>
+           <a class="dropdown-item active" href="non-medis">Umum</a>
+         </div>
+       </div>
+       <h1></h1>
       <div id="map"></div>
 
 
