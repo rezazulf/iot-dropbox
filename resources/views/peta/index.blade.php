@@ -60,10 +60,10 @@ function success(position) {
             if ((value.distance >= 0) && (value.distance <= 10)) {
                var stat = 'Kosong';
             }
-            if ((value.distance >= 90) && (value.distance <= 100)) {
+            if ((value.distance >= 75) && (value.distance <= 100)) {
                var stat = 'Penuh';
             }
-            if ((value.distance > 10) && (value.distance < 90)) {
+            if ((value.distance > 10) && (value.distance < 75)) {
                var stat = 'Terisi';
             }
             $('#nama_tmpt').text('Lokasi : '+value.keterangan+', '+ value.alamat);
@@ -82,8 +82,8 @@ function success(position) {
             var img = document.createElement('img');
             img.classList.add('img-fluid');
             if(img && img.style) {
-               img.style.height = 'auto';
-               img.style.width = 'auto';
+               img.style.height = '50%';
+               img.style.width = '50%';
             }
                img.src = value.foto_tempatsampah;
                            document.getElementById('gambar').appendChild(img);

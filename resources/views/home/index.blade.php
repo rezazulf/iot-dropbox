@@ -59,10 +59,10 @@
                @if($row->distance >= '0' and $row->distance <=10)
                <P>Kosong</P>
                @endif
-               @if($row->distance >= 90 and $row->distance <=100)
+               @if($row->distance >= 75 and $row->distance <=100)
                <P>Penuh</P>
                @endif
-               @if($row->distance > 10 and $row->distance < 90 ) 
+               @if($row->distance > 10 and $row->distance < 75 ) 
                <P>Terisi</P>
 
                   @endif

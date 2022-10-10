@@ -8,6 +8,7 @@ use App\Http\Controllers\TempatsampahController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\Welcome2Controller;
 use App\Http\Controllers\KosongkanController;
 
 /*
@@ -23,6 +24,7 @@ use App\Http\Controllers\KosongkanController;
 
 
 Route::resource('/',WelcomeController::class);
+Route::resource('medis',Welcome2Controller::class);
 Route::get('login', 'App\Http\Controllers\LoginController@index')->name('login');
 // Route::get('register', 'App\Http\Controllers\AuthController@register')->name('register');
 Route::post('proses_login', 'App\Http\Controllers\LoginController@proses_login')->name('proses_login');
@@ -44,6 +46,6 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('petugas', HomeController::class);
         Route::resource('peta', PetaController::class);
         Route::resource('kosongkansampah', TempatsampahController::class);
-        Route::post('update_distance', 'App\Http\Controllers\TempatsampahController@update_distance')->name('update_distance');
+        Route::get('update_distance', 'App\Http\Controllers\TempatsampahController@update_distance')->name('update_distance');
     });
 });

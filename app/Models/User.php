@@ -21,6 +21,7 @@ class User extends Model implements Authenticatable
         'password',
         'level',
         'id_telegram',
+        'status',
     ];
     
     public function tempatsampah()

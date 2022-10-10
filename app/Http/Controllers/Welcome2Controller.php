@@ -6,7 +6,7 @@ use App\Models\Tempatsampah;
 use App\Models\Viewtransaksi;
 use Illuminate\Http\Request;
 
-class WelcomeController extends Controller
+class Welcome2Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,8 @@ class WelcomeController extends Controller
           $data['title'] = 'Smart Trash';
           $data['q'] = $request->q;
           $data['rows'] = Viewtransaksi::where('status', 'Aktif')->get();
-          $data['rows'] = Viewtransaksi::where('jenis_limbah', 'Non-Medis')->get();
-          return view('welcome', $data);
+          $data['rows'] = Viewtransaksi::where('jenis_limbah', 'Medis')->get();
+          return view('welcome2', $data);
     }
 
     /**

@@ -16,6 +16,13 @@
       width: 800px;
       height: 500px;
    }
+   .dropdown-menu li{
+    background:#FFF ;
+   }
+   .dropdown-menu li:hover{
+      background:#dedede  !important;
+   }
+   
    </style>
    <title>Smart Trash</title>
 </head>
@@ -23,15 +30,30 @@
 <body>
    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="/">Smart Trash</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-         <div class="navbar-nav">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+         <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Peta
+               </a>   
+                  <ul class="dropdown-menu nav-fill w-100 bg-primary text-white" aria-labelledby="navbarDropdownMenuLink">
+                  <li>
+                  <a class="nav-link{{  request()->routeIs('Medis') ? 'active' : '' }} bg-primary text-white" href="medis">Limbah Medis <span
+                        class="sr-only">(current)</span></a>
+                  </li>
+                  <li>
+                  <a class="nav-link{{  request()->routeIs('/') ? 'active' : '' }} bg-primary text-white" href="/">Limbah Umum <span
+                     class="sr-only">(current)</span></a>
+                  </li>
+                  </ul>
+               </li>
             <a class="nav-link{{  request()->routeIs('Login.*') ? 'active' : '' }}" href="login">Login <span
-                  class="sr-only">(current)</span></a>
-         </div>
+               class="sr-only">(current)</span></a>
+         </ul>
       </div>
    </nav>
    <div class="container-fluid">

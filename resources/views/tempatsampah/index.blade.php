@@ -56,17 +56,16 @@
             <td>
                @if(Auth::user()->level =='admin')
                <a class="btn btn-sm btn-warning" href="{{ route('tempatsampah.edit', $row) }}">Ubah</a>
-               <form method="POST" action="{{ route('tempatsampah.destroy', $row) }}" style="display: inline-block;">
+               {{-- <form method="POST" action="{{ route('tempatsampah.destroy', $row) }}" style="display: inline-block;">
                   @csrf
                   @method('DELETE')
-                  {{-- <button class="btn btn-sm btn-danger" onclick="return confirm('Hapus Data?')">Hapus</button> --}}
-               </form>
+                  <button class="btn btn-sm btn-danger" onclick="return confirm('Hapus Data?')">Hapus</button>
+               </form> --}}
                @elseif ($row->user->nama_user == Auth::user()->nama_user)
-               <form method="POST" action="{{url('update_distance')}}" style="display: inline-block;">
+               <form method="GET" action="{{url('update_distance')}}" style="display: inline-block;">
                   {{ csrf_field() }}
                   <input class="form-control" type="hidden" name="id_tempat_sampah"
                      value="{{ old('id_tempat_sampah', $row->id_tempat_sampah) }}" />
-                  <input class="form-control" type="hidden" name="alamat" value="{{ old('alamat', $row->alamat) }}" />
 
 
                   <button class="btn btn-sm btn-danger"
