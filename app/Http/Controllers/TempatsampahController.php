@@ -25,10 +25,20 @@ class TempatsampahController extends Controller
     {
         $data['title'] = 'Data Tempat Sampah';
         $data['q'] = $request->q;
-        $data['rows'] = Tempatsampah::where('alamat', 'like', '%' . $request->q . '%')->paginate(10);
-        $data['rows'] = Tempatsampah::where('kota', 'like', '%' . $request->q . '%')->paginate(10);
-        $data['rows'] = Tempatsampah::where('keterangan', 'like', '%' . $request->q . '%')->paginate(10);     
-        $data['rows'] = Tempatsampah::with('user')->paginate(10);
+
+        if ($request->has('q')){
+            $tempatsampahs = Tempatsampah::where('alamat', 'like', '%' . $request->q . '%')->paginate(10);
+            // $tempatsampahs = Tempatsampah::where('kota', 'like', '%' . $request->q . '%')->paginate(10);
+            // $tempatsampahs = Tempatsampah::where('keterangan', 'like', '%' . $request->q . '%')->paginate(10);
+          }else{
+            $tempatsampahs = Tempatsampah::paginate(10);
+            $tempatsampahs = Tempatsampah::with('user')->paginate(10);
+          }
+        $data['rows'] = $tempatsampahs;
+        // $data['rows'] = Tempatsampah::where('alamat', 'like', '%' . $request->q . '%')->paginate(10);
+        // $data['rows'] = Tempatsampah::where('kota', 'like', '%' . $request->q . '%')->paginate(10);
+        // $data['rows'] = Tempatsampah::where('keterangan', 'like', '%' . $request->q . '%')->paginate(10);     
+        // $data['rows'] = Tempatsampah::with('user')->paginate(10);
         // dd($data);
         return view('tempatsampah.index', $data, compact('data'));
     }

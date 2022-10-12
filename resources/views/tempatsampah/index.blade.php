@@ -4,7 +4,7 @@
 <p class="alert alert-success">{{ session('success') }}</p>
 @endif
 <div class="card card-default">
-   @if(Auth::user()->level =='admin')
+   {{-- @if(Auth::user()->level =='admin') --}}
 
    <div class="card-header">
       <form class="form-inline">
@@ -20,7 +20,7 @@
       </form>
 
    </div>
-   @endif
+   {{-- @endif --}}
    <div class="card-body p-0 table-responsive">
       <table class="table table-bordered table-striped table-hover mb-0" id="myTable">
          <thead>
@@ -36,7 +36,7 @@
                <th>Gambar</th>
                <th onclick="sortTable(8)">Status</th>
                <th onclick="sortTable(9)">Jenis Limbah</th>
-               <th>Aksi</th>
+               <th onclick="sortTable(10)">Aksi</th>
             </tr>
          </thead>
          <?php $no = 1 ?>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Pengosongansampah;
+use App\Models\Viewtransaksi;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -29,8 +30,16 @@ class HomeController extends Controller
     $data['q'] = $request->q;
 
 
-    $transaksi = DB::table('view_transaksi_tmpt_sampah')
-            ->paginate(10);  
+    if ($request->has('q')){
+      $transaksi = Viewtransaksi::where('alamat', 'like', '%' . $request->q . '%')->paginate(10);
+      // $transaksi = Viewtransaksi::where('kota', 'like', '%' . $request->q . '%')->paginate(10);
+      // $transaksi = Viewtransaksi::where('keterangan', 'like', '%' . $request->q . '%')->paginate(10);
+    }else{
+      $transaksi = Viewtransaksi::paginate(10);
+    }
+    // $transaksi = Viewtransaksi::paginate(10);
+    // $transaksi = DB::table('view_transaksi_tmpt_sampah')
+    //         ->paginate(10);  
 
     $data['rows'] = $transaksi;
 

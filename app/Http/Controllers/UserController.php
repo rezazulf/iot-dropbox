@@ -18,6 +18,7 @@ class UserController extends Controller
         $data['title'] = 'Data User';
         $data['q'] = $request->q;
         $data['rows'] = User::where('nama_user', 'like', '%' . $request->q . '%')->paginate(10);
+        $data['rows'] = User::where('email', 'like', '%' . $request->q . '%')->paginate(10);
         return view('user.index', $data);
     }
 
