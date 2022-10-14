@@ -18,11 +18,15 @@ class LoginController extends Controller
      public function index(Request $request)
     {
          if ($user = Auth::user()) {
-            if ($user->level == 'admin') {
-                return redirect()->intended('admin');
-            } elseif ($user->level == 'petugas') {
-                return redirect()->intended('petugas');
-            }
+                if ($user->level == 'admin') {
+                    if($user->status == 'Aktif'){
+                    return redirect()->intended('admin');
+                    }
+                } elseif ($user->level == 'petugas') {
+                    if($user->status == 'Aktif'){
+                    return redirect()->intended('petugas');
+                    }
+                }
         }
           return view('login');
     }
@@ -40,14 +44,18 @@ class LoginController extends Controller
 
             if (Auth::attempt($kredensil)) {
                 $user = Auth::user();
-                if ($user->level == 'admin') {
-                    return redirect()->intended('home');
-                } elseif ($user->level == 'petugas') {
-                    return redirect()->intended('petugas');
-                }
-                return redirect()->intended('/');
-            }
+                        if ($user->level == 'admin') {
+                            if ($user->status == 'Aktif') {
+                                return redirect()->intended('home');
+                            }
+                        } elseif ($user->level == 'petugas') {
+                            if ($user->status == 'Aktif') {
+                                return redirect()->intended('petugas');
+                            }
+                        }
 
+                    // return redirect()->intended('/');
+            }
         return redirect('login')
                                 ->withInput()
                                 ->withErrors(['login_gagal' => 'These credentials do not match our records.']);

@@ -21,7 +21,7 @@ class Cek_login
         }
         $user = Auth::user();
 
-        if($user->level == $roles)
+        if($user->level == $roles && $user->status == 'Aktif')
             return $next($request);
 
 
