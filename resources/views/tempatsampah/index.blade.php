@@ -66,6 +66,7 @@
                   {{ csrf_field() }}
                   <input class="form-control" type="hidden" name="id_tempat_sampah"
                      value="{{ old('id_tempat_sampah', $row->id_tempat_sampah) }}" />
+                  <input class="form-control" type="hidden" name="alamat" value="{{ old('alamat', $row->alamat) }}" />
 
 
                   <button class="btn btn-sm btn-danger"

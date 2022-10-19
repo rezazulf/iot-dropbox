@@ -17,8 +17,9 @@ class Welcome2Controller extends Controller
     {
           $data['title'] = 'Smart Trash';
           $data['q'] = $request->q;
-          $data['rows'] = Viewtransaksi::where('status', 'Aktif')->get();
-          $data['rows'] = Viewtransaksi::where('jenis_limbah', 'Medis')->get();
+          $data['rows'] = Viewtransaksi::where([
+            'status' => 'Aktif',
+            'jenis_limbah' => 'Medis'])->get();
           return view('welcome2', $data);
     }
 
